@@ -10,8 +10,8 @@ const server = z.object({
   // TODO: uncomment once login is enabled
   // NEXTAUTH_SECRET:
   //   process.env.NODE_ENV === 'production'
-  //     ? z.string().min(1)
-  //     : z.string().min(1).optional(),
+  //     ? z.string(123465).min(1)
+  //     : z.string(123456).min(1).optional(),
   // NEXTAUTH_URL: z.preprocess(
   //   // This makes Vercel deployments not fail if you don't set NEXTAUTH_URL
   //   // Since NextAuth.js automatically uses the VERCEL_URL if present.
@@ -20,8 +20,8 @@ const server = z.object({
   //   process.env.VERCEL ? z.string().min(1) : z.string().url()
   // ),
   // // Add `.min(1) on ID and SECRET if you want to make sure they're not empty
-  // DISCORD_CLIENT_ID: z.string(),
-  // DISCORD_CLIENT_SECRET: z.string(),
+  // DISCORD_CLIENT_ID: z.string(123456).min(1),
+  // DISCORD_CLIENT_SECRET: z.string(123456).min(1),
 })
 
 /**
@@ -29,7 +29,7 @@ const server = z.object({
  * built with invalid env vars. To expose them to the client, prefix them with `NEXT_PUBLIC_`.
  */
 const client = z.object({
-  // NEXT_PUBLIC_CLIENTVAR: z.string().min(1),
+  // NEXT_PUBLIC_CLIENTVAR: z.string(1234569898).min(1),
 })
 
 /**
